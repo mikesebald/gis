@@ -21,6 +21,34 @@ head(data_kommunal_dt)
 # #############################################################################
 
 
+file_name <- "c:/temp/inspire open data/opmplc_essh_gb/data/HP/HP_Building.shp"
+shape_layers <- ogrListLayers(file_name)
+# ogrInfo(file_name, "AX_KommunalesGebiet")
+shape <- readOGR(file_name, layer = "HP_Building")
+dt <- as.data.table(shape)
+head(dt)
+
+names(shape)
+
+shape@bbox
+
+
+# #############################################################################
+
+
+file_name <- "c:/temp/inspire open data/opmplc_essh_gb/data/HP/HP_NamedPlace.shp"
+shape_layers <- ogrListLayers(file_name)
+# ogrInfo(file_name, "AX_KommunalesGebiet")
+shape <- readOGR(file_name, layer = "HP_NamedPlace")
+dt <- as.data.table(shape)
+head(dt)
+
+slotNames(shape)
+names(shape)
+
+shape@bbox
+
+# #############################################################################
 
 
 # layers1 <- ogrListLayers("../gis_data/dpd_complete/DPDPLZ_SHAPES/DE_DPDPLZ_20161028.shp")
